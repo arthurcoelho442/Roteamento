@@ -1,0 +1,30 @@
+hostname r4
+!
+vrf definition v1
+ exit
+!
+int eth1
+desc r4@eth1 -> r2@eth3
+ vrf for v1
+ ipv4 addr 20.19.55.2 255.255.255.0
+ ipv6 addr 2019:55::2 ffff:ffff:ffff:ffff::
+ no shutdown
+ no log-link-change
+exit
+!
+int eth2
+desc r4@eth2 -> r5@eth1
+ vrf for v1
+ ipv4 addr 20.19.56.1 255.255.255.0
+ ipv6 addr 2019:56::1 ffff:ffff:ffff:ffff::
+ no shutdown
+ no log-link-change
+exit
+!
+server telnet tel
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf v1
+ exit
+!
