@@ -4,22 +4,27 @@ vrf definition v1
  exit
 !
 int eth1
-desc r4@eth1 -> r2@eth3
+ desc r4@eth1 -> r2@eth3
+ lldp ena
  vrf for v1
- ipv4 addr 20.19.55.2 255.255.255.0
- ipv6 addr 2019:55::2 ffff:ffff:ffff:ffff::
+ ipv4 addr 20.19.53.10 255.255.255.252
  no shutdown
  no log-link-change
 exit
 !
 int eth2
-desc r4@eth2 -> r5@eth1
+ desc r4@eth2 -> r5@eth1
+ lldp ena
  vrf for v1
- ipv4 addr 20.19.56.1 255.255.255.0
- ipv6 addr 2019:56::1 ffff:ffff:ffff:ffff::
+ ipv4 addr 20.19.53.13 255.255.255.252
  no shutdown
  no log-link-change
 exit
+!
+!
+ipv4 route v1 20.19.53.6 255.255.255.252 20.19.53.9
+ipv4 route v1 20.19.53.1 255.255.255.252 20.19.53.9
+!
 !
 server telnet tel
  security protocol telnet
