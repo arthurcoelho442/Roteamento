@@ -32,7 +32,7 @@ int eth3
 exit
 !
 !
-ipv4 route v1 20.19.53.14 255.255.255.252 20.19.53.10
+ipv4 route v1 20.19.53.12 255.255.255.252 20.19.53.10
 !
 !
 server telnet tel
