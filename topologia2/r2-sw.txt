@@ -1,0 +1,61 @@
+hostname r2
+buggy
+!
+!
+vrf definition v1
+ exit
+!
+router rip4 1
+ vrf v1
+ redistribute connected
+ exit
+!
+interface ethernet1
+ description ROUTER2 -> ROUTER1
+ vrf forwarding v1
+ ipv4 address 20.19.68.2 255.255.255.252
+ router rip4 1 enable
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet2
+ description ROUTER2 -> ROUTER4
+ vrf forwarding v1
+ ipv4 address 20.19.68.5 255.255.255.252
+ router rip4 1 enable
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet3
+ description ROUTER2 -> ROUTER3
+ vrf forwarding v1
+ ipv4 address 20.19.68.13 255.255.255.252
+ router rip4 1 enable
+ no shutdown
+ no log-link-change
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+server telnet tel
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf v1
+ exit
+!
+!
+end
