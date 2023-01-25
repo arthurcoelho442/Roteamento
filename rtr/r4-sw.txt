@@ -6,8 +6,8 @@ vrf definition v1
 int eth1
 desc r4@eth1 -> r2@eth3
  vrf for v1
- ipv4 addr 20.19.55.2 255.255.255.252
- ipv6 addr 2019:55::2 ffff:ffff:ffff:ffff::
+ ipv4 addr 201.91.101.54 255.255.255.252
+ ipv6 addr 2019:1101::54 ffff:ffff:ffff:ffff::
  no shutdown
  no log-link-change
 exit
@@ -15,17 +15,17 @@ exit
 int eth2
 desc r4@eth2 -> r5@eth1
  vrf for v1
- ipv4 addr 20.19.56.1 255.255.255.252
- ipv6 addr 2019:56::1 ffff:ffff:ffff:ffff::
+ ipv4 addr 201.91.102.53 255.255.255.252
+ ipv6 addr 2019:1102::53 ffff:ffff:ffff:ffff::
  no shutdown
  no log-link-change
 exit
 !
 !
-ipv4 route v1 20.19.53.1 255.255.255.252 20.19.55.1
-ipv4 route v1 20.19.54.2 255.255.255.252 20.19.55.1
-ipv6 route v1 2019:53::1 ffff:ffff:ffff:ffff:: 2019:55::1
-ipv6 route v1 2019:54::2 ffff:ffff:ffff:ffff:: 2019:55::1
+ipv4 route v1 201.91.099.53 255.255.255.252 201.91.101.53
+ipv4 route v1 201.91.100.54 255.255.255.252 201.91.101.53
+ipv6 route v1 2019:1099::53 ffff:ffff:ffff:ffff:: 2019:1101::53
+ipv6 route v1 2019:1100::54 ffff:ffff:ffff:ffff:: 2019:1101::53
 !
 server telnet tel
  security protocol telnet
