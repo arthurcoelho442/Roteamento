@@ -7,7 +7,8 @@ int eth1
 desc r5@eth1 -> r4@eth2
  vrf for v1
  ipv4 addr 201.91.102.54 255.255.255.252
- ipv6 addr 2019:1102::54 ffff:ffff:ffff:ffff::
+ ipv6 addr 2019:1102::54 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+ ipv6 enable
  no shutdown
  no log-link-change
 exit
