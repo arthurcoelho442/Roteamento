@@ -1,0 +1,30 @@
+hostname r3
+buggy
+!
+!
+vrf definition v1
+ exit
+!
+interface eth1
+ description r3@eth1 -> r2@eth2
+ vrf forwarding v1
+ ipv4 address 201.91.100.54 255.255.255.252
+ ipv6 address 2019:1100::54 ffff:ffff:ffff:ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+!
+ipv4 route v1 0.0.0.0 0.0.0.0 201.91.100.53
+ipv6 route v1 :: :: 2019:1100::53
+!
+!
+server telnet tel
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf v1
+ exit
+!
+!
+end
