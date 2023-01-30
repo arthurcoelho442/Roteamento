@@ -57,7 +57,6 @@ traceroute <ip> vrf v1
 Comando para print da tabela de roteamento ipv4 e ipv6
 ```
 show ipv4 route v1
-```
 show ipv6 route v1
 ```
 E por fim linha de comando dentro do roteador para efetuar o desligamento de um enlace 
