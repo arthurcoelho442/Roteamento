@@ -43,10 +43,12 @@ Para se elaborar toda a analise do trabalho alguns comandos do freelink foram ut
 Ping para testar a conecção entre os roteadores:
 ```
 ping <ip> /vrf v1
+ping <ip> vrf v1
 ```
 Traceroute para analizar a rota que o pacote esta fazendo para trafegar de um roteador para o outro: 
 ```
 traceroute <ip> /vrf v1
+traceroute <ip> vrf v1
 ```
 Comando para print da tabela de roteamento ipv4 e ipv6
 ```
