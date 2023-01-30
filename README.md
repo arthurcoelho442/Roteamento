@@ -44,9 +44,15 @@ Ping para testar a conecção entre os roteadores:
 ```
 ping <ip> /vrf v1
 ```
+```
+ping <ip> vrf v1
+```
 Traceroute para analizar a rota que o pacote esta fazendo para trafegar de um roteador para o outro: 
 ```
 traceroute <ip> /vrf v1
+```
+```
+traceroute <ip> vrf v1
 ```
 Comando para print da tabela de roteamento ipv4 e ipv6
 ```
@@ -67,11 +73,12 @@ shutdown
 **Milena da Silva Mantovanelli (2019109068)**:
 - ipv4 =  201.91.xxx.xx - partindo de 201.91.90.68
 - ipv6 =  2019:1xx::xx  - partindo de 2019:1090::68
+
 a matricula escolhida para utilização no trabalho foi a do aluno Arthur 2019109953.
 # Topologia 01
 Na topologia 1, temos uma rede com 5 elementos, implementada com roteamento estático.
 
-(imagem da topologia criada)
+<img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-01/Diagrama.png" width=600><br>
 
 Mostrando a tabela de rotas para o **ipv4** e **ipv6**:
 ```
@@ -126,35 +133,34 @@ Testando novamente **ping** e **traceroute** entre **R5** -> **R1** (após desli
 
 Observa-se que os pacotes não chegam mais até R5 a partir de R1, levando a um traceroute diretamente nulo pois não sai pacotes de **R1** já do contrario **R5** -> **R1** conseguimos ver que o pacote trafega até **R2** sem perdas porém logo é perdido por conta do **eth1** esta desligado, quando a interface é religado o envio de pacotes volta a normalidade.
 
-# Topologia 01
+# Topologia 02
 Na topologia 2, temos uma rede com 4 elementos, implementada com roteamento dinamico.
 
-
-(imagem da topologia criada)
+<img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/Diagrama.png" width=600><br>
 
 Mostrando a tabela de rotas para o **ipv4** e **ipv6** antes e após criação das rotas dinamicas:
 
 **R1:**
 
-::::**_Antes_** ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: **_Depois_**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::**_Antes_** :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: **_Depois_**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 | <img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r1-route-antes.jpg" width=1000><br> | <img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r1-route-depois.jpg" width=1000><br>|
 | :---: | :---: |
 
 **R2:**
 
-::::**_Antes_** ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: **_Depois_**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::**_Antes_** :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: **_Depois_**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 | <img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r2-route-antes.jpg" width=1000><br> | <img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r2-route-depois.jpg" width=1000><br>|
 | :---: | :---: |
 
 **R3:**
 
-::::**_Antes_** ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: **_Depois_**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::**_Antes_** :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: **_Depois_**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 | <img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r3-route-antes.jpg" width=1000><br> | <img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r3-route-depois.jpg" width=1000><br>|
 | :---: | :---: |
 
 **R4:**
 
-::::**_Antes_** ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: **_Depois_**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::**_Antes_** :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: **_Depois_**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 | <img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r4-route-antes.jpg" width=1000><br> | <img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r4-route-depois.jpg" width=1000><br>|
 | :---: | :---: |
 
@@ -185,7 +191,7 @@ Testando novamente o **ping** e **traceroute** no roteador **R1** para o roteado
 Testando novamente o **ping** e **traceroute** no roteador **R4** para o roteador **R1** por **ipv4** e **ipv6**:
 ![ping-traceroute-r4-r1-ipv4-ipv6-down](https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/ping-traceroute-r4-r1-ipv4-ipv6-down.jpg)
 
-podemos observar que o transito entre **R1** e **R4** esta rompido partindo de **R1** porem quando partimos de **R4** o roteador consegue comunicação com **R1** passando pelo rodeador **R2**, como mostra a nova tabela de roteamento de **R4**, quando a rota é religada o pacote torna a passar pelo enlace entre **R1** e **R4**.
+vemos que o transito entre **R1** e **R4** esta rompido partindo de **R1** porem quando partimos de **R4** o roteador consegue comunicação com **R1** passando pelo rodeador **R2**, como mostra a nova tabela de roteamento de **R4**, quando a rota é religada o pacote torna a passar pelo enlace entre **R1** e **R4**.
 
 ![r4-route-depois-down](https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r4-route-depois-down.jpg)
 
