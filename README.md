@@ -67,6 +67,7 @@ shutdown
 **Milena da Silva Mantovanelli (2019109068)**:
 - ipv4 =  201.91.xxx.xx - partindo de 201.91.90.68
 - ipv6 =  2019:1xx::xx  - partindo de 2019:1090::68
+
 a matricula escolhida para utilização no trabalho foi a do aluno Arthur 2019109953.
 # Topologia 01
 Na topologia 1, temos uma rede com 5 elementos, implementada com roteamento estático.
