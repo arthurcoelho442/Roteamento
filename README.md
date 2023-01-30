@@ -191,7 +191,7 @@ Testando novamente o **ping** e **traceroute** no roteador **R1** para o roteado
 Testando novamente o **ping** e **traceroute** no roteador **R4** para o roteador **R1** por **ipv4** e **ipv6**:
 ![ping-traceroute-r4-r1-ipv4-ipv6-down](https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/ping-traceroute-r4-r1-ipv4-ipv6-down.jpg)
 
-podemos observar que o transito entre **R1** e **R4** esta rompido partindo de **R1** porem quando partimos de **R4** o roteador consegue comunicação com **R1** passando pelo rodeador **R2**, como mostra a nova tabela de roteamento de **R4**, quando a rota é religada o pacote torna a passar pelo enlace entre **R1** e **R4**.
+vemos que o transito entre **R1** e **R4** esta rompido partindo de **R1** porem quando partimos de **R4** o roteador consegue comunicação com **R1** passando pelo rodeador **R2**, como mostra a nova tabela de roteamento de **R4**, quando a rota é religada o pacote torna a passar pelo enlace entre **R1** e **R4**.
 
 ![r4-route-depois-down](https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/r4-route-depois-down.jpg)
 
