@@ -71,7 +71,7 @@ a matricula escolhida para utilização no trabalho foi a do aluno Arthur 201910
 # Topologia 01
 Na topologia 1, temos uma rede com 5 elementos, implementada com roteamento estático.
 
-(imagem da topologia criada)
+<img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-01/Diagrama.png" width=600><br>
 
 Mostrando a tabela de rotas para o **ipv4** e **ipv6**:
 ```
@@ -126,11 +126,10 @@ Testando novamente **ping** e **traceroute** entre **R5** -> **R1** (após desli
 
 Observa-se que os pacotes não chegam mais até R5 a partir de R1, levando a um traceroute diretamente nulo pois não sai pacotes de **R1** já do contrario **R5** -> **R1** conseguimos ver que o pacote trafega até **R2** sem perdas porém logo é perdido por conta do **eth1** esta desligado, quando a interface é religado o envio de pacotes volta a normalidade.
 
-# Topologia 01
+# Topologia 02
 Na topologia 2, temos uma rede com 4 elementos, implementada com roteamento dinamico.
 
-
-(imagem da topologia criada)
+<img src="https://github.com/arthurcoelho442/Roteamento/blob/main/Imagens/Topologia-02/Diagrama.png" width=600><br>
 
 Mostrando a tabela de rotas para o **ipv4** e **ipv6** antes e após criação das rotas dinamicas:
 
